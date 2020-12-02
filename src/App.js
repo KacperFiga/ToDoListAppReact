@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import { useReducer } from "react";
+import "./App.css";
 
-function App() {
+import Form from "./Components/Form";
+import Task from "./Components/Task";
+
+const tasks = [];
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case "ADD":
+      return [...state, action.newTask];
+    case "REMOVE":
+      return (state = state.filter((task) => task.id !== action.id));
+    default:
+      throw Error("Oooops, something going wrong ;(");
+  }
+};
+
+const App = () => {
+  const [state, dispatch] = useReducer(reducer, tasks);
+
+  const tasksList = state.map((task) => (
+    <Task key={task.id} id={task.id} title={task.title} handler={dispatch} />
+  ));
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Form handler={dispatch} />
+      {tasksList}
     </div>
   );
-}
+};
 
 export default App;
