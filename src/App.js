@@ -25,10 +25,11 @@ const App = () => {
   ));
 
   return (
-    <div className="App">
+    <main className="App">
       <Form handler={dispatch} />
-      <div className="App_tasks">{tasksList}</div>
-    </div>
+      <section className="App_tasks">{tasksList}</section>
+      <footer className="App_footer">Made by Kacper Figa</footer>
+    </main>
   );
 };
 

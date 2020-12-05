@@ -7,7 +7,10 @@ const Form = ({ handler }) => {
 
   const handleClickButton = (e) => {
     e.preventDefault();
-    if (!inputValue) return;
+    if (!inputValue) {
+      alert("Give me task title please");
+      return;
+    }
     const id = Math.floor(Math.random() * 1000);
     const newTask = { title: inputValue, id };
     handler({ type: "ADD", id, newTask }, []);
@@ -15,18 +18,18 @@ const Form = ({ handler }) => {
   };
 
   return (
-    <div className="App_form">
+    <section className="App_form">
       <form onSubmit={handleClickButton}>
         <input
           className="App_form_input"
           type="text"
-          placeholder="title task"
+          placeholder="task title"
           value={inputValue}
           onChange={handleChange}
         ></input>
         <button className="App_form_button">add</button>
       </form>
-    </div>
+    </section>
   );
 };
 

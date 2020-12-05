@@ -1,0 +1,88 @@
+body{
+  background:linear-gradient(to right,#667eea, #764ba2);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.App{
+ font-family: sans-serif;
+ width: 75vw;
+ max-width: 500px;
+
+  & button{
+    cursor: pointer;
+  }
+
+&_footer{
+  position: absolute;
+  bottom:0;
+  left:0;
+  width: 100%;
+  min-height: 3vh;
+  padding:5px;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ &_tasks{
+  width: 100%;
+  &_element{
+  width: 100%;
+  height: 7vh;
+  background-color: $basicColor;
+  margin-top:10px;
+  padding:10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size:1.2em;
+  min-height: 50px;
+  &_btn{
+    @include basicCss();
+    width: 30%;
+    height: 90%;
+    background-color:rgba(7, 248, 111,.75);
+    transition: .2s;
+    &:hover{
+      background-color:rgb(2, 240, 100);
+    }
+      }
+   &_title{
+    padding-left: 5px;
+   }
+  }
+ }
+
+ &_form{
+  background-color: $basicColor;
+  width: 100%;
+  height: 10vh;
+  min-height: 100px;
+ &_input{
+  height: 40%;
+  width: 50%;
+  padding:0 0 0 10px;
+  @include basicCss();
+ }
+ &_button{
+  height: 40%;
+  width: 30%;
+ @include basicCss();
+ transition: .2s;
+ &:hover{
+   background-color:rgb(2, 240, 100);
+ }
+   }
+ & form{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+ }
+}
+}
