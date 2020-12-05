@@ -1,6 +1,7 @@
 body{
   background:linear-gradient(to right,#667eea, #764ba2);
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,13 +11,8 @@ body{
  font-family: sans-serif;
  width: 75vw;
  max-width: 500px;
-
-  & button{
-    cursor: pointer;
-  }
-
-&_footer{
-  position: absolute;
+ &_footer{
+  position: fixed;
   bottom:0;
   left:0;
   width: 100%;
@@ -26,7 +22,12 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  color:gray;
 }
+
+  & button{
+    cursor: pointer;
+  }
 
  &_tasks{
   width: 100%;
