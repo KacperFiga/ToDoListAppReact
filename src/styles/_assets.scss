@@ -1,0 +1,8 @@
+$basicColor:rgba(255,255,255,0.75);
+
+@mixin basicCss {
+ outline:none;
+ border:none;
+ background-color: #fff; 
+ font-size: 1.2rem;
+}

@@ -1,8 +1,8 @@
 import { useReducer } from "react";
-import "./App.css";
-
 import Form from "./Components/Form";
 import Task from "./Components/Task";
+
+import "./styles/css/main.min.css";
 
 const tasks = [];
 
@@ -27,7 +27,7 @@ const App = () => {
   return (
     <div className="App">
       <Form handler={dispatch} />
-      {tasksList}
+      <div className="App_tasks">{tasksList}</div>
     </div>
   );
 };

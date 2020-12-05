@@ -7,22 +7,24 @@ const Form = ({ handler }) => {
 
   const handleClickButton = (e) => {
     e.preventDefault();
+    if (!inputValue) return;
     const id = Math.floor(Math.random() * 1000);
     const newTask = { title: inputValue, id };
-    setInputValue("");
     handler({ type: "ADD", id, newTask }, []);
+    setInputValue("");
   };
 
   return (
-    <div>
+    <div className="App_form">
       <form onSubmit={handleClickButton}>
         <input
+          className="App_form_input"
           type="text"
           placeholder="title task"
           value={inputValue}
           onChange={handleChange}
         ></input>
-        <button>add</button>
+        <button className="App_form_button">add</button>
       </form>
     </div>
   );
