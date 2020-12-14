@@ -1,8 +1,9 @@
 import { useReducer } from "react";
 import Form from "./Components/Form";
 import Task from "./Components/Task";
+import TopBar from './Components/TopBar'
 
-import "./styles/css/main.min.css";
+import "./styles/main.min.css";
 
 const tasks = [];
 
@@ -26,6 +27,7 @@ const App = () => {
 
   return (
     <main className="App">
+      <TopBar len={state.length}/>
       <Form handler={dispatch} />
       <section className="App_tasks">{tasksList}</section>
       <footer className="App_footer">Made by Kacper Figa</footer>

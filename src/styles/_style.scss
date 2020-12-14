@@ -11,6 +11,17 @@ body{
  font-family: sans-serif;
  width: 75vw;
  max-width: 500px;
+ &__topBar{
+  background-color: $basicColor;
+  margin-bottom: 5px;
+  width: 100%;
+  height: 5vh;
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  padding:0 0 0 10px;
+  font-size: 1.2rem;
+}
  &_footer{
   position: fixed;
   bottom:0;
